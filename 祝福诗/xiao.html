@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>老姐出嫁诗</title>
+    <link rel="icon" href="girl.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="girl.png" type="image/x-icon" />
+    <style>
+      * {
+        background-color: rgb(255, 237, 239);
+      }
+      #nextButton {
+        position: fixed;
+        top: 1vh;
+        right: 1vw;
+        width: 40px;
+      }
+      #autoPlayButton {
+        position: fixed;
+        top: 8vh;
+        right: 1vw;
+        width: 40px;
+      }
+      #showAllButton {
+        position: fixed;
+        top: 15vh;
+        right: 1vw;
+        width: 40px;
+      }
+
+      #thumbnailContainer img {
+        width: 6.2vw;
+        margin: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+
+      #thumbnailContainer img:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+      }
+      button {
+        background: linear-gradient(to right, #fa4f007f, #ff0000);
+        color: rgb(255, 255, 255);
+        padding: 10px 10px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 3px 3px 5px rgb(255, 0, 0);
+        transition: 0.5s;
+        outline: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-0%);
+        background-color: #4caf50;
+        font-size: 16px;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: 0.5s;
+      }
+      #nextButton:hover,
+      #showAllButton:hover,
+      #autoPlayButton:hover {
+        opacity: 1;
+        transition: 0.5s;
+      }
+      .h {
+        font-size: 50px;
+        text-align: center;
+        font-weight: bold;
+        color: #ff0c0c;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        background-image: linear-gradient(45deg, #ff1302, #f77a05);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      @media only screen and (max-width: 767px) {
+        #thumbnailContainer img {
+          width: 12vw;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="h">老姐出嫁诗</p>
+    <div id="thumbnailContainer"></div>
+    <button id="nextButton">▷</button>
+    <button id="showAllButton">◯</button>
+    <button id="autoPlayButton">▶</button>
+
+    <script>
+      window.onload = function () {
+        var images = [];
+
+        // 使用循环将文件夹中的85张照片添加到数组中
+        for (var i = 1; i <= 84; i++) {
+          images.push(i + ".png"); // 假设照片命名规则为 image1.png, image2.png, ...
+        }
+
+        var currentImageIndex = 1; // 当前图片索引
+        var imageInterval; // 用于存储自动播放计时器
+
+        var nextButton = document.getElementById("nextButton"); // 获取下一张按钮元素
+        var thumbnailContainer = document.getElementById("thumbnailContainer"); // 获取缩略图容器元素
+        var showAllButton = document.getElementById("showAllButton"); // 获取显示所有照片的按钮元素
+        var autoPlayButton = document.getElementById("autoPlayButton"); // 获取自动播放按钮元素
+
+        // 创建第一张缩略图
+        const firstThumbnail = document.createElement("img");
+        firstThumbnail.src = images[currentImageIndex - 1]; // 将第一张照片的URL替换成实际的URL
+        // 将第一张缩略图添加到缩略图容器中
+        thumbnailContainer.appendChild(firstThumbnail);
+
+        // 下一张按钮点击事件处理程序
+        nextButton.addEventListener("click", function () {
+          showNextImage();
+        });
+
+        // 自动播放按钮点击事件处理程序
+        autoPlayButton.addEventListener("click", function () {
+          if (imageInterval) {
+            // 取消自动播放
+            clearInterval(imageInterval);
+            imageInterval = null;
+            autoPlayButton.innerHTML = "▶";
+          } else {
+            // 启动自动播放
+            imageInterval = setInterval(showNextImage, 400); // 每秒自动切换图片
+            autoPlayButton.innerHTML = "❚❚";
+          }
+        });
+
+        // 显示下一张图片
+        function showNextImage() {
+          if (currentImageIndex < images.length) {
+            // 创建并添加缩略图到缩略图容器
+            var thumbnailImg = document.createElement("img");
+            thumbnailImg.src = images[currentImageIndex];
+            thumbnailContainer.appendChild(thumbnailImg);
+
+            currentImageIndex++; // 递增图片索引
+          } else {
+            // 已经显示完所有图片，重置索引并清空缩略图容器
+            currentImageIndex = 1;
+            thumbnailContainer.innerHTML = "";
+
+            // 创建第一张缩略图
+            const firstThumbnail = document.createElement("img");
+            firstThumbnail.src = images[currentImageIndex - 1];
+            // 将第一张缩略图添加到缩略图容器中
+            thumbnailContainer.appendChild(firstThumbnail);
+          }
+        }
+
+        // 显示所有照片按钮点击事件处理程序
+        showAllButton.addEventListener("click", function () {
+          thumbnailContainer.innerHTML = ""; // 清空缩略图容器
+
+          // 创建并添加所有照片的缩略图到缩略图容器
+          images.forEach(function (image) {
+            var thumbnailImg = document.createElement("img");
+            thumbnailImg.src = image;
+            thumbnailContainer.appendChild(thumbnailImg);
+            currentImageIndex = 84;
+          });
+        });
+      };
+    </script>
+  </body>
+</html>
