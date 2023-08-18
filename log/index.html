@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>老姐出赛</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="../i/girl.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../i/girl.png" type="image/x-icon" />
+    <style>
+      .custom-cursor {
+        cursor: url("goat.gif"), auto;
+      }
+      #message {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        background: linear-gradient(to right, #fa4f00, #ff0000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+    <script>
+      var currentImageIndex = 2; // 当前图片序号
+
+      function changeImage() {
+        // 替换第一个图片的路径
+        var image = document.getElementById("myImage");
+        image.src = "image" + currentImageIndex + ".png";
+
+        // 替换第二个图片的路径
+        var secondImage = document.getElementById("mySecondImage");
+        secondImage.src = "t" + currentImageIndex + ".png";
+
+        // 递增当前图片序号
+        currentImageIndex++;
+
+        // 如果当前图片序号超过总数，重置为1
+        if (currentImageIndex > 6) {
+          currentImageIndex = 1;
+        }
+      }
+    </script>
+
+    <script>
+      // 在页面加载完成后执行以下代码
+      window.onload = function () {
+        // 获取密码输入框元素
+        var passwordInput = document.getElementById("password");
+
+        // 监听密码输入框的键盘按下事件
+        passwordInput.addEventListener("keyup", function (event) {
+          // 判断按下的键是否为回车键（keyCode为13）
+          if (event.keyCode === 13) {
+            // 模拟点击登录按钮
+            document.getElementById("btn").click();
+          }
+        });
+      };
+    </script>
+    <script>
+      function checkPassword() {
+        var password = document.getElementById("password").value;
+        var count = parseInt(document.getElementById("count").value);
+
+        // 此处为了简单起见，假设正确密码是 "password"
+        if (password !== "1") {
+          count++;
+          document.getElementById("count").value = count;
+
+          // 根据错误次数显示不同的提示消息
+          if (count === 1) {
+            document.getElementById("message").innerHTML =
+              "<span>(ಡωಡ)密码是一个六位数</span>";
+          } else if (count === 3) {
+            document.getElementById("message").innerHTML =
+              "<span>(ง •̀_•́)ง密码由两个三位数日期组成</span>";
+          } else if (count === 4) {
+            document.getElementById("message").innerHTML = "<span>wrong</span>";
+          } else if (count === 5) {
+            document.getElementById("message").innerHTML =
+              "<span>٩( 'ω' )و 还记得你们领红本本的日期吗</span>";
+          } else if (count === 8) {
+            document.getElementById("message").innerHTML =
+              "<span>wrong again</span>";
+          } else if (count === 10) {
+            document.getElementById("message").innerHTML =
+              "<span>| ू•ૅω•́)！！！还没进去呀</span>";
+          } else if (count === 11) {
+            document.getElementById("message").innerHTML =
+              "<span>✺（∗❛ัᴗ❛ั∗)◞✺试过今天的日期吗</span>";
+          } else if (count === 15) {
+            document.getElementById("message").innerHTML =
+              "<span>ԅ(¯ㅂ¯ԅ)不是吧，还没进去呢,密码是由51开头的哦</span>";
+          } else if (count === 17) {
+            document.getElementById("message").innerHTML =
+              "<span>。。。</span>";
+          } else if (count === 20) {
+            document.getElementById("message").innerHTML =
+              "<span>|ω・）密码是由78结尾的</span>";
+          } else if (count === 30) {
+            document.getElementById("message").innerHTML =
+              "<span>（｡ò ∀ ó｡）真没想到，你们竟然错了30次，密码是51_378</span>";
+          } else {
+            document.getElementById("message").innerHTML =
+              "<span>密码错误</span>";
+          }
+
+          // 设置密码提示消息的渐变色
+          var message = document.getElementById("message");
+          message.style.background =
+            "linear-gradient(to right, #fa4f00, #ff0000)";
+          message.style.webkitBackgroundClip = "text";
+          message.style.webkitTextFillColor = "transparent";
+        } else {
+          window.location.href = "../i/index.html"; // 跳转到受保护的页面
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <section>
+      <div class="leaves">
+        <div class="set">
+          <div><img src="pink9.png" /></div>
+          <div><img src="pink3.png" /></div>
+          <div><img src="pink4.png" /></div>
+          <div><img src="pink6.png" /></div>
+          <div><img src="pink3.png" /></div>
+          <div><img src="pink9.png" /></div>
+          <div><img src="pink9.png" /></div>
+          <div><img src="pink9.png" /></div>
+        </div>
+      </div>
+      <img class="bg" id="myImage" src="image1.png" />
+
+      <img src="girl.png" class="girl" />
+      <img class="trees" id="mySecondImage" src="t1.png" />
+
+      <div class="login">
+        <h2>Happy Marriage</h2>
+        <button id="button" onclick="changeImage()">click|ω・）</button>
+
+        <div class="inputBox">
+          <input type="password" id="password" name="password" /><br /><br />
+          <input type="hidden" id="count" value="0" />
+          <!-- 用于记录错误次数 -->
+        </div>
+
+        <div class="inputBox">
+          <input
+            type="button"
+            value="login"
+            onclick="checkPassword()"
+            id="btn"
+          />
+        </div>
+        <p style="text-align: center" id="message"></p>
+      </div>
+    </section>
+  </body>
+</html>
