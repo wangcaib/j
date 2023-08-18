@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>老姐出赛</title>
+
+    <link rel="icon" href="i/girl.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="i/girl.png" type="image/x-icon" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      section {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        overflow-x: hidden;
+      }
+
+      section .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        object-fit: cover;
+      }
+
+      section .trees {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 100;
+        pointer-events: none;
+      }
+
+      section .girl {
+        position: absolute;
+        pointer-events: none;
+        transform: scale(0.5);
+        animation: animateGirl 20s linear infinite;
+      }
+      @keyframes animateGirl {
+        0% {
+          transform: translateX(calc(100% + 100vw)) scale(0.5);
+        }
+        50% {
+          transform: translateX(calc(-100% - 100vw)) scale(0.5);
+        }
+        50.01% {
+          transform: translateX(calc(-100% - 100vw)) rotateY(180deg) scale(0.5);
+        }
+        100% {
+          transform: translateX(calc(100% + 100vw)) rotateY(180deg) scale(0.5);
+        }
+      }
+
+      .login {
+        position: relative;
+        padding: 60px;
+        background: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(2px);
+        border: 1px solid #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+      }
+
+      .login h2 {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: 600;
+        background: linear-gradient(to right, #fa4f007f, #ff0000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 10px;
+      }
+      button {
+        background: linear-gradient(to right, #fa4f007f, #ff0000);
+        color: rgb(255, 255, 255);
+        padding: 10px 10px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 3px 3px 5px rgb(255, 0, 0);
+        transition: 0.5s;
+        outline: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-0%);
+        background-color: #4caf50;
+        font-size: 16px;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: 0.5s;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 8px;
+      }
+      #button:hover {
+        opacity: 1;
+        transition: 0.2s;
+      }
+      .login .inputBox #btn {
+        position: relative;
+        border: none;
+        outline: none;
+        background: linear-gradient(to right, #fa4f007f, #ff0000);
+        opacity: 0.4;
+        box-shadow: 3px 3px 5px rgb(255, 0, 0);
+        color: #f8f8f8;
+
+        cursor: pointer;
+        font-size: 1.25em;
+        font-weight: 500;
+        transition: 0.5s;
+      }
+      .login .inputBox #btn:hover {
+        opacity: 0.8;
+        transition: 0.2s;
+      }
+
+      .login .inputBox {
+        position: relative;
+      }
+
+      .login .inputBox input {
+        position: relative;
+        width: 100%;
+        padding: 15px 20px;
+        outline: none;
+        font-size: 1.25em;
+        color: #ff1100;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        margin-bottom: 10px;
+      }
+
+      .login .inputBox ::placeholder {
+        color: #ff0000;
+      }
+
+      .leaves {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .leaves .set {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .leaves .set div {
+        position: absolute;
+        display: block;
+      }
+
+      .leaves .set div:nth-child(1) {
+        left: 20%;
+        animation: animate 20s linear infinite;
+      }
+      .leaves .set div:nth-child(2) {
+        left: 50%;
+        animation: animate 14s linear infinite;
+      }
+      .leaves .set div:nth-child(3) {
+        left: 70%;
+        animation: animate 12s linear infinite;
+      }
+      .leaves .set div:nth-child(4) {
+        left: 5%;
+        animation: animate 15s linear infinite;
+      }
+      .leaves .set div:nth-child(5) {
+        left: 85%;
+        animation: animate 18s linear infinite;
+      }
+      .leaves .set div:nth-child(6) {
+        left: 90%;
+        animation: animate 12s linear infinite;
+      }
+      .leaves .set div:nth-child(7) {
+        left: 15%;
+        animation: animate 14s linear infinite;
+      }
+      .leaves .set div:nth-child(8) {
+        left: 60%;
+        animation: animate 15s linear infinite;
+      }
+
+      @keyframes animate {
+        0% {
+          opacity: 0;
+          top: -10%;
+          transform: translateX(20px) rotate(8deg);
+        }
+        10% {
+          opacity: 1;
+        }
+        20% {
+          transform: translateX(-20px) rotate(45deg);
+        }
+        40% {
+          transform: translateX(-20px) rotate(90deg);
+        }
+        60% {
+          transform: translateX(20px) rotate(180deg);
+        }
+        80% {
+          transform: translateX(-20px) rotate(45deg);
+        }
+        100% {
+          top: 100%;
+          transform: translateX(20px) rotate(225deg);
+        }
+      }
+      .custom-cursor {
+        cursor: url("goat.gif"), auto;
+      }
+      #message {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        background: linear-gradient(to right, #fa4f00, #ff0000);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+    <script>
+      var currentImageIndex = 2; // 当前图片序号
+
+      function changeImage() {
+        // 替换第一个图片的路径
+        var image = document.getElementById("myImage");
+        image.src = "log/image" + currentImageIndex + ".png";
+
+        // 替换第二个图片的路径
+        var secondImage = document.getElementById("mySecondImage");
+        secondImage.src = "log/t" + currentImageIndex + ".png";
+
+        // 递增当前图片序号
+        currentImageIndex++;
+
+        // 如果当前图片序号超过总数，重置为1
+        if (currentImageIndex > 6) {
+          currentImageIndex = 1;
+        }
+      }
+    </script>
+
+    <script>
+      // 在页面加载完成后执行以下代码
+      window.onload = function () {
+        // 获取密码输入框元素
+        var passwordInput = document.getElementById("password");
+
+        // 监听密码输入框的键盘按下事件
+        passwordInput.addEventListener("keyup", function (event) {
+          // 判断按下的键是否为回车键（keyCode为13）
+          if (event.keyCode === 13) {
+            // 模拟点击登录按钮
+            document.getElementById("btn").click();
+          }
+        });
+      };
+    </script>
+    <script>
+      function checkPassword() {
+        var password = document.getElementById("password").value;
+        var count = parseInt(document.getElementById("count").value);
+
+        // 此处为了简单起见，假设正确密码是 "password"
+        if (password !== "1") {
+          count++;
+          document.getElementById("count").value = count;
+
+          // 根据错误次数显示不同的提示消息
+          if (count === 1) {
+            document.getElementById("message").innerHTML =
+              "<span>(ಡωಡ)密码是一个六位数</span>";
+          } else if (count === 3) {
+            document.getElementById("message").innerHTML =
+              "<span>(ง •̀_•́)ง密码由两个三位数日期组成</span>";
+          } else if (count === 4) {
+            document.getElementById("message").innerHTML = "<span>wrong</span>";
+          } else if (count === 5) {
+            document.getElementById("message").innerHTML =
+              "<span>٩( 'ω' )و 还记得你们领红本本的日期吗</span>";
+          } else if (count === 8) {
+            document.getElementById("message").innerHTML =
+              "<span>wrong again</span>";
+          } else if (count === 10) {
+            document.getElementById("message").innerHTML =
+              "<span>| ू•ૅω•́)！！！还没进去呀</span>";
+          } else if (count === 11) {
+            document.getElementById("message").innerHTML =
+              "<span>✺（∗❛ัᴗ❛ั∗)◞✺试过今天的日期吗</span>";
+          } else if (count === 15) {
+            document.getElementById("message").innerHTML =
+              "<span>ԅ(¯ㅂ¯ԅ)不是吧，还没进去呢,密码是由51开头的哦</span>";
+          } else if (count === 17) {
+            document.getElementById("message").innerHTML =
+              "<span>。。。</span>";
+          } else if (count === 20) {
+            document.getElementById("message").innerHTML =
+              "<span>|ω・）密码是由78结尾的</span>";
+          } else if (count === 30) {
+            document.getElementById("message").innerHTML =
+              "<span>（｡ò ∀ ó｡）真没想到，你们竟然错了30次，密码是51_378</span>";
+          } else {
+            document.getElementById("message").innerHTML =
+              "<span>密码错误</span>";
+          }
+
+          // 设置密码提示消息的渐变色
+          var message = document.getElementById("message");
+          message.style.background =
+            "linear-gradient(to right, #fa4f00, #ff0000)";
+          message.style.webkitBackgroundClip = "text";
+          message.style.webkitTextFillColor = "transparent";
+        } else {
+          window.location.href = "i/index.html"; // 跳转到受保护的页面
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <section>
+      <div class="leaves">
+        <div class="set">
+          <div><img src="log/pink9.png" /></div>
+          <div><img src="log/pink3.png" /></div>
+          <div><img src="log/pink4.png" /></div>
+          <div><img src="log/pink6.png" /></div>
+          <div><img src="log/pink3.png" /></div>
+          <div><img src="log/pink9.png" /></div>
+          <div><img src="log/pink9.png" /></div>
+          <div><img src="log/pink9.png" /></div>
+        </div>
+      </div>
+      <img class="bg" id="myImage" src="log/image1.png" />
+
+      <img src="log/gir2.png" class="girl" />
+
+      <img class="trees" id="mySecondImage" src="log/t1.png" />
+
+      <div class="login">
+        <h2>Happy Marriage</h2>
+        <button id="button" onclick="changeImage()">click|ω・）</button>
+
+        <div class="inputBox">
+          <input type="password" id="password" name="password" /><br /><br />
+          <input type="hidden" id="count" value="0" />
+          <!-- 用于记录错误次数 -->
+        </div>
+
+        <div class="inputBox">
+          <input
+            type="button"
+            value="login"
+            onclick="checkPassword()"
+            id="btn"
+          />
+        </div>
+        <p style="text-align: center" id="message"></p>
+      </div>
+    </section>
+  </body>
+</html>
