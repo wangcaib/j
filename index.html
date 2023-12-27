@@ -17,6 +17,14 @@
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
       }
+      #full-page {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: yellow; /* 用于显示效果，您可以根据需要更改背景颜色或添加其他样式 */
+    }
 .loader__balls {
   display: flex;
   flex-direction: row;
@@ -536,7 +544,7 @@
   </head>
 
   <body>
-    <div class="loader">
+    <div class="loader" id="full-page">
   <div class="loader__balls">
     <div class="loader__balls__group">
       <div class="ball item1"></div>
