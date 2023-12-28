@@ -4,6 +4,8 @@
     <title>(⑉°з°)-♡</title>
     <link rel="icon" href="../i/girl.png" type="image/x-icon" />
     <link rel="shortcut icon" href="../i/girl.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../loader.css" />
+    <script src="../loader.js"></script>
     <style>
       body {
         background: rgb(255, 237, 239);
@@ -91,16 +93,11 @@
           width: 95vw;
           height: 95vw;
         }
-       
+        #previous,
+        #next,
         #last,
         #linkButton {
-          font-size: 3.5vw;
-        }
-       #previous,
-        #next
-                   {
-            font-size: 4vw;
-          
+          font-size: 5vw;
         }
         #previous {
           left: 1vw;
@@ -109,70 +106,81 @@
           right: 1vw;
         }
         #linkButton {
-          top: 2vw;
+          top: 4vw;
           left: 1vw;
         }
         #last {
-          top: 2vw;
+          top: 4vw;
           right: 1vw;
         }
       }
     </style>
   </head>
-  <body>
-    <div id="slideshow">
-      <img id="slide" src="" alt="Slide Image" />
-      <button id="previous">◁</button>
-      <button id="next">▷</button>
-      <button id="last">▷▷</button>
-      <button id="linkButton" onclick="window.location='xiao.html'">
-        |ω・）
-      </button>
+  <div class="cssload-main">
+    <div class="cssload-heart">
+      <span class="cssload-heartL"></span>
+      <span class="cssload-heartR"></span>
+      <span class="cssload-square"></span>
     </div>
+    <div class="cssload-shadow"></div>
+  </div>
 
-    <script>
-      var images = [];
+  <section style="display: none">
+    <body>
+      <div id="slideshow">
+        <img id="slide" src="" alt="Slide Image" />
+        <button id="previous">◁</button>
+        <button id="next">▷</button>
+        <button id="last">▷▷</button>
+        <button id="linkButton" onclick="window.location='xiao.html'">
+          |ω・）
+        </button>
+      </div>
 
-      // 使用循环将文件夹中的85张照片添加到数组中
-      for (var i = 1; i <= 84; i++) {
-        images.push(i + ".jpg"); // 假设照片命名规则为 1.png, 2.png, ...
-      }
+      <script>
+        var images = [];
 
-      var currentIndex = 0;
-      var slide = document.getElementById("slide");
-      var linkButton = document.getElementById("linkButton");
-
-      function showSlide(index) {
-        slide.src = images[index];
-        if (index === images.length - 1) {
-          linkButton.style.display = "block";
-        } else {
-          linkButton.style.display = "none";
+        // 使用循环将文件夹中的85张照片添加到数组中
+        for (var i = 1; i <= 84; i++) {
+          images.push(i + ".jpg"); // 假设照片命名规则为 1.png, 2.png, ...
         }
-      }
 
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % images.length;
+        var currentIndex = 0;
+        var slide = document.getElementById("slide");
+        var linkButton = document.getElementById("linkButton");
+
+        function showSlide(index) {
+          slide.src = images[index];
+          if (index === images.length - 1) {
+            linkButton.style.display = "block";
+          } else {
+            linkButton.style.display = "none";
+          }
+        }
+
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % images.length;
+          showSlide(currentIndex);
+        }
+
+        function previousSlide() {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          showSlide(currentIndex);
+        }
+
+        function lastSlide() {
+          currentIndex = images.length - 1;
+          showSlide(currentIndex);
+        }
+
         showSlide(currentIndex);
-      }
 
-      function previousSlide() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showSlide(currentIndex);
-      }
-
-      function lastSlide() {
-        currentIndex = images.length - 1;
-        showSlide(currentIndex);
-      }
-
-      showSlide(currentIndex);
-
-      document.getElementById("next").addEventListener("click", nextSlide);
-      document
-        .getElementById("previous")
-        .addEventListener("click", previousSlide);
-      document.getElementById("last").addEventListener("click", lastSlide);
-    </script>
-  </body>
+        document.getElementById("next").addEventListener("click", nextSlide);
+        document
+          .getElementById("previous")
+          .addEventListener("click", previousSlide);
+        document.getElementById("last").addEventListener("click", lastSlide);
+      </script>
+    </body>
+  </section>
 </html>
