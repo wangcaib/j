@@ -51,27 +51,34 @@
         pointer-events: none;
       }
 
-      section .girl {
+      section .qc {
         position: absolute;
+        top: 23.3%;
         pointer-events: none;
-        transform: scale(0.5);
-        animation: animateGirl 20s linear infinite;
+        animation: animateqc 20s linear infinite;
       }
-      @keyframes animateGirl {
+      @keyframes animateqc {
         0% {
-          transform: translateX(calc(100% + 100vw)) scale(0.5);
+          transform: translateX(-120vw) scale(0.5) scaleX(1);
         }
+
         50% {
-          transform: translateX(calc(-100% - 100vw)) scale(0.5);
+          transform: translateX(110vw) scale(0.5) scaleX(1);
         }
-        50.01% {
-          transform: translateX(calc(-100% - 100vw)) rotateY(180deg) scale(0.5);
-        }
+
+        50.01%,
         100% {
-          transform: translateX(calc(100% + 100vw)) rotateY(180deg) scale(0.5);
+          transform: translateX(110vw) scale(0.5) scaleX(-1);
+        }
+
+        99.99% {
+          transform: translateX(-120.1vw) scale(0.5) scaleX(-1);
+        }
+
+        100% {
+          transform: translateX(-120vw) scale(0.5) scaleX(1);
         }
       }
-
       .login {
         position: relative;
         padding: 60px;
@@ -277,7 +284,7 @@
         currentImageIndex++;
 
         // 如果当前图片序号超过总数，重置为1
-        if (currentImageIndex > 5) {
+        if (currentImageIndex > 6) {
           currentImageIndex = 1;
         }
       }
@@ -384,7 +391,7 @@
       </div>
       <img class="bg" id="myImage" src="log/image1.jpg" />
 
-      <img src="log/girl.png" class="girl" />
+      <img src="log/qc.gif" class="qc" />
 
       <img class="trees" id="mySecondImage" src="log/t1.png" />
 
