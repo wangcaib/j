@@ -1,423 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>٩(๑`老姐出赛´๑)۶</title>
 
-    <link rel="icon" href="i/girl.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="i/girl.png" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="loader.css" />
-    <script src="loader.js"></script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
-
-      section {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100vh;
-        overflow-x: hidden;
-      }
-
-      section .bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        object-fit: cover;
-      }
-
-      section .trees {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 100;
-        pointer-events: none;
-      }
-
-      section .qc {
-        position: absolute;
-        top: 36.5vh;
-        scale: (0.5);
-        height: 40vh;
-        width: auto;
-        pointer-events: none;
-        animation: animateqc 20s linear infinite;
-      }
-      @keyframes animateqc {
-        0% {
-          transform: translateX(-120vw) scale(0.5) scaleX(1);
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>٩(๑˃̵ᴗ˂̵๑)۶</title>
+    <link rel="icon" href="../i/girl.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../i/girl.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../loader.css" />
+    <script src="../loader.js"></script>
+   <style>
+         
+         
+         .item img:hover {
+        filter: saturate(2); /* 鼠标悬停时增加饱和度 */
+    }
+       * {
+            padding: 0;
+            margin: 0;
+            
         }
 
-        50% {
-          transform: translateX(110vw) scale(0.5) scaleX(1);
+        .shell {
+            width: 100%;
+            position: relative;
+            padding: 80px 0;
+            background-attachment: fixed;
+
+            background-size: cover;
+            
         }
 
-        50.01%,
-        100% {
-          transform: translateX(110vw) scale(0.5) scaleX(-1);
+        .shell:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(99, 99, 99, 0.8);
+            content: "";
         }
 
-        99.99% {
-          transform: translateX(-120.1vw) scale(0.5) scaleX(-1);
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
         }
 
-        100% {
-          transform: translateX(-120vw) scale(0.5) scaleX(1);
+        .title {
+            color: #fff;
+            font-size: 46px;
+            font-weight: normal;
+            margin: 0;
         }
-      }
-      .login {
-        position: relative;
-        padding: 60px;
-        background: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(2px);
-        border: 1px solid #fff;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        border-right: 1px solid rgba(255, 255, 255, 0.3);
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        border-left: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 20px;
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-      }
 
-      .login h2 {
-        position: relative;
-        width: 100%;
-        text-align: center;
-        font-size: 2.5em;
-        font-weight: 600;
-        background: linear-gradient(to right, #fa4f007f, #ff0000);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px;
-      }
-      button {
-        background: linear-gradient(to right, #fa4f007f, #ff0000);
-        color: rgb(255, 255, 255);
-        padding: 10px 10px;
-        margin: 0 10px;
-        border: none;
-        border-radius: 50px;
-        box-shadow: 3px 3px 5px rgb(255, 0, 0);
-        outline: none;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-0%);
-        background-color: #4caf50;
-        font-size: 16px;
-        cursor: pointer;
-        opacity: 0.5;
-        transition: 0.2s;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        padding: 5px 8px;
-      }
-      #button:hover {
-        opacity: 1;
-        transition: 0.2s;
-      }
-      .login .inputBox #btn {
-        position: relative;
-        border: none;
-        outline: none;
-        background: linear-gradient(to right, #fa4f007f, #ff0000);
-        opacity: 0.4;
-        box-shadow: 3px 3px 5px rgb(255, 0, 0);
-        color: #f8f8f8;
-
-        cursor: pointer;
-        font-size: 1.25em;
-        font-weight: 500;
-        transition: 0.3s;
-      }
-      .login .inputBox #btn:hover {
-        opacity: 0.8;
-        transition: 0.2s;
-      }
-
-      .login .inputBox {
-        position: relative;
-      }
-
-      .login .inputBox input {
-        position: relative;
-        width: 100%;
-        padding: 15px 20px;
-        outline: none;
-        font-size: 1.25em;
-        color: #ff1100;
-        border-radius: 5px;
-        background: rgba(255, 255, 255, 0.5);
-        border: none;
-        margin-bottom: 10px;
-      }
-
-      .login .inputBox ::placeholder {
-        color: #ff0000;
-      }
-
-      .leaves {
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      .leaves .set {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-      }
-
-      .leaves .set div {
-        position: absolute;
-        display: block;
-      }
-
-      .leaves .set div:nth-child(1) {
-        left: 20%;
-        animation: animate 20s linear infinite;
-      }
-      .leaves .set div:nth-child(2) {
-        left: 50%;
-        animation: animate 14s linear infinite;
-      }
-      .leaves .set div:nth-child(3) {
-        left: 70%;
-        animation: animate 12s linear infinite;
-      }
-      .leaves .set div:nth-child(4) {
-        left: 5%;
-        animation: animate 15s linear infinite;
-      }
-      .leaves .set div:nth-child(5) {
-        left: 85%;
-        animation: animate 18s linear infinite;
-      }
-      .leaves .set div:nth-child(6) {
-        left: 90%;
-        animation: animate 12s linear infinite;
-      }
-      .leaves .set div:nth-child(7) {
-        left: 15%;
-        animation: animate 14s linear infinite;
-      }
-      .leaves .set div:nth-child(8) {
-        left: 60%;
-        animation: animate 15s linear infinite;
-      }
-
-      @keyframes animate {
-        0% {
-          opacity: 0;
-          top: -10%;
-          transform: translateX(20px) rotate(8deg);
+        .timeline {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-width: 700px;
+            position: relative;
         }
-        10% {
-          opacity: 1;
-        }
-        20% {
-          transform: translateX(-20px) rotate(45deg);
-        }
-        40% {
-          transform: translateX(-20px) rotate(90deg);
-        }
-        60% {
-          transform: translateX(20px) rotate(180deg);
-        }
-        80% {
-          transform: translateX(-20px) rotate(45deg);
-        }
-        100% {
-          top: 100%;
-          transform: translateX(20px) rotate(225deg);
-        }
-      }
 
-      #message {
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        background: linear-gradient(to right, #fa4f00, #ff0000);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+        .content-title {
+            font-weight: normal;
+            font-size: 66px;
+            margin: -10px 0 0 0;
+            transition: 0.4s;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        .content-desc {
+            margin: 0;
+            font-size: 15px;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 25px;
+        }
+
+        .timeline:before {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            content: "";
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .item {
+            padding: 40px 0;
+            opacity: 0.3;
+            filter: blur(2px);
+            transition: 0.5s;
+            box-sizing: border-box;
+            width: calc(50% - 40px);
+            display: flex;
+            position: relative;
+            transform: translateY(-80px);
+        }
+
+        .item:before {
+            /* 设置在伪元素before中的内容  */
+            content: attr(data-text);
+            letter-spacing: 3px;
+            width: 100%;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            border-left: 2px solid rgba(255, 255, 255, 0.5);
+            top: 70%;
+            margin-top: -5px;
+            padding-left: 15px;
+            opacity: 0;
+            right: calc(-100% - 56px);
+            font: 900 20px '';
+            letter-spacing: 5px;
+        }
+
+        .item:nth-child(even) {
+            align-self: flex-end;
+        }
+
+        .item:nth-child(even):before {
+            right: auto;
+            text-align: right;
+            left: calc(-100% - 56px);
+            padding-left: 0;
+            border-left: none;
+            border-right: 2px solid rgba(255, 255, 255, 0.5);
+            padding-right: 15px;
+        }
+
+        .item--active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+
+        .item--active:before {
+            top: 50%;
+            transition: 0.3s all 0.2s;
+            opacity: 1;
+        }
+
+        .item--active .content-title {
+            margin: -50px 0 20px 0;
+        }
+
+        .img {
+            max-width: 100%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+            letter-spacing: 5px;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+
+        }
+
+        button {
+            background: linear-gradient(to right, #fa4f007f, #ff0000);
+            color: rgb(255, 255, 255);
+            padding: 10px 10px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 3px 3px 5px rgb(255, 0, 0);
+            transition: 0.5s;
+            outline: none;
+            position: absolute;
+            transform: translateY(-0%);
+            background-color: #4caf50;
+            font-size: 16px;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: 0.5s;
+        }
+
+        #linkButton:hover {
+            opacity: 1;
+            transition: 0.3s;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .item {
+                align-self: baseline !important;
+                width: 100%;
+                padding: 0 30px 150px 80px;
+            }
+
+            .item:before {
+                left: 10px !important;
+                padding: 0 !important;
+                top: 50px;
+                text-align: center !important;
+                width: 60px;
+                border: none !important;
+            }
+
+            .item:last-child {
+                padding-bottom: 40px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .timeline:before {
+                left: 40px;
+            }
+        }
     </style>
-    <script>
-      var currentImageIndex = 2; // 当前图片序号
 
-      function changeImage() {
-        // 替换第一个图片的路径
-        var image = document.getElementById("myImage");
-        image.src = "log/image" + currentImageIndex + ".jpg";
+</head>
 
-        // 替换第二个图片的路径
-        var secondImage = document.getElementById("mySecondImage");
-        secondImage.src = "log/t" + currentImageIndex + ".png";
-
-        // 递增当前图片序号
-        currentImageIndex++;
-
-        // 如果当前图片序号超过总数，重置为1
-        if (currentImageIndex > 5) {
-          currentImageIndex = 1;
-        }
-      }
-    </script>
-
-    <script>
-      window.onload = function () {
-        // 获取密码输入框元素
-        var passwordInput = document.getElementById("password");
-
-        // 监听密码输入框的键盘按下事件
-        passwordInput.addEventListener("keyup", function (event) {
-          // 判断按下的键是否为回车键（keyCode为13）
-          if (event.keyCode === 13) {
-            // 模拟点击登录按钮
-            document.getElementById("btn").click();
-          }
-        });
-      };
-    </script>
-    <script>
-      function checkPassword() {
-        var password = document.getElementById("password").value;
-        var count = parseInt(document.getElementById("count").value);
-
-        // 此处为了简单起见，假设正确密码是 "password"
-        if (password !== "1") {
-          count++;
-          document.getElementById("count").value = count;
-
-          // 根据错误次数显示不同的提示消息
-          if (count === 1) {
-            document.getElementById("message").innerHTML =
-              "<span>(ಡωಡ)密码是一个六位数</span>";
-          } else if (count === 3) {
-            document.getElementById("message").innerHTML =
-              "<span>(ง •̀_•́)ง密码由两个三位数日期组成</span>";
-          } else if (count === 4) {
-            document.getElementById("message").innerHTML = "<span>wrong</span>";
-          } else if (count === 5) {
-            document.getElementById("message").innerHTML =
-              "<span>٩( 'ω' )و 还记得你们领红本本的日期吗</span>";
-          } else if (count === 8) {
-            document.getElementById("message").innerHTML =
-              "<span>wrong again</span>";
-          } else if (count === 10) {
-            document.getElementById("message").innerHTML =
-              "<span>| ू•ૅω•́)！！！还没进去呀</span>";
-          } else if (count === 11) {
-            document.getElementById("message").innerHTML =
-              "<span>✺（∗❛ัᴗ❛ั∗)◞✺试过今天的日期吗</span>";
-          } else if (count === 15) {
-            document.getElementById("message").innerHTML =
-              "<span>ԅ(¯ㅂ¯ԅ)不是吧，还没进去呢,密码是由51开头的哦</span>";
-          } else if (count === 17) {
-            document.getElementById("message").innerHTML =
-              "<span>。。。</span>";
-          } else if (count === 20) {
-            document.getElementById("message").innerHTML =
-              "<span>|ω・）密码是由78结尾的</span>";
-          } else if (count === 30) {
-            document.getElementById("message").innerHTML =
-              "<span>（｡ò ∀ ó｡）真没想到，你们竟然错了30次，密码是51_378</span>";
-          } else {
-            document.getElementById("message").innerHTML =
-              "<span>密码错误</span>";
-          }
-
-          // 设置密码提示消息的渐变色
-          var message = document.getElementById("message");
-          message.style.background =
-            "linear-gradient(to right, #fa4f00, #ff0000)";
-          message.style.webkitBackgroundClip = "text";
-          message.style.webkitTextFillColor = "transparent";
-        } else {
-          window.location.href = "i/index.html"; // 跳转到受保护的页面
-        }
-      }
-    </script>
-  </head>
-
-  <body>
+<body>
     <div class="cssload-main">
-      <div class="cssload-heart">
-        <span class="cssload-heartL"></span>
-        <span class="cssload-heartR"></span>
-        <span class="cssload-square"></span>
-      </div>
-      <div class="cssload-shadow"></div>
-    </div>
-
-    <section style="display: none">
-      <div class="leaves">
-        <div class="set">
-          <div><img src="log/pink9.png" /></div>
-          <div><img src="log/pink3.png" /></div>
-          <div><img src="log/pink4.png" /></div>
-          <div><img src="log/pink6.png" /></div>
-          <div><img src="log/pink3.png" /></div>
-          <div><img src="log/pink9.png" /></div>
-          <div><img src="log/pink9.png" /></div>
-          <div><img src="log/pink9.png" /></div>
+        <div class="cssload-heart">
+          <span class="cssload-heartL"></span>
+          <span class="cssload-heartR"></span>
+          <span class="cssload-square"></span>
         </div>
+        <div class="cssload-shadow"></div>
       </div>
-      <img class="bg" id="myImage" src="log/image1.jpg" />
 
-      <img src="log/qc.gif" class="qc" />
+<section style="display: none;">
+    <div >
+       
+            <div class="shell" id="shell">
 
-      <img class="trees" id="mySecondImage" src="log/t1.png" />
 
-      <div class="login">
-        <h2>Happy Marriage</h2>
-        <button id="button" onclick="changeImage()">click|ω・）</button>
+                <div class="header">
+                    <audio controls style="opacity: 0.5; width: 250px;" class="tittle">
+                        <source src="夏日之梦.mp3" type="audio/mpeg">
 
-        <div class="inputBox">
-          <input type="password" id="password" name="password" /><br /><br />
-          <input type="hidden" id="count" value="0" />
-          <!-- 用于记录错误次数 -->
+                    </audio>
+                    <h2 class="title">新婚快乐</h2>
+                    <h3 class="subtitle">daxiaobao</h3>
+                </div>
+                <div class="timeline">
+
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/2017517.jpg" />
+                            <h2 class="content-title">2017.5.17
+                            </h2>
+                            <p class="content-desc">
+                                祝你们新婚快乐，心心相印，真心实意，恩恩爱爱，两心同行，情比海深，执子之手，白头偕老，彼此相依
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20176.jpg" />
+                            <h2 class="content-title">2017.6</h2>
+                            <p class="content-desc">
+                                愿往后余生，心中有暖，严重有笑，和最懂你的他（她）在一起，被岁月温柔以待，快乐到老
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20178.jpg" />
+                            <h2 class="content-title">2017 8</h2>
+                            <p class="content-desc">
+                                US举办了防骗教育节目，让骗子和专家进行同台pk，观众辩论谁是专家。第一场辩论呢，是关于宇宙起源的骗子pk物理学家，pk之后发现小学生普遍相信骗子，他们更喜欢神话呀，什么的。第二场辩论，骗子谈灵魂转世生物学家讲达尔文进化论
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20179.jpg" />
+                            <h2 class="content-title">2017.9</h2>
+                            <p class="content-desc">
+                                力争之后，骗子险胜，这次发现中学生更愿意相信灵魂转世的说法，还不断追问自己的前世是什么，第三场讲健康和养生，这次骗子pk医学专家，但是这次却发现，即使受过大学教育
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20184.jpg" />
+                            <h2 class="content-title">2018.4</h2>
+                            <p class="content-desc">
+                                的大学生也相信苹果可以包治百病。第四场呢是骗子pk经济学家，整个播出过程全场观众瞪大眼睛，没人敢说话，因为现场没有人能区分骗子和经济学家，即使是经验丰富的
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20189.jpg" />
+                            <h2 class="content-title">2018.9</h2>
+                            <p class="content-desc">
+                                老者也毫无头绪（no idea），节目播出期间主持人还接到一个电话，竟然是美国总统亲自打过来的，他说自己一直在看这个
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20194.jpg" />
+                            <h2 class="content-title">2019.4</h2>
+                            <p class="content-desc">
+                                节目，同时告诉大家，千万别相信经济学家的那套鬼话，美国先后多次金融危机，就是因为听信了他们那套理论。最后一场是骗子
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20195.jpg" />
+                            <h2 class="content-title">2019.5</h2>
+                            <p class="content-desc">
+                                和美国的政治家pk，骗子一看到政治家立刻起身，90度鞠躬对主持人说自己认输，放弃辩论啊！主持人很诧异啊！问为什么呀？前面几场里面都很厉害呀！骗子说在骗人这个行业里，我们算业余的，他们才是职业的，
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20196.jpg" />
+                            <h2 class="content-title">2019.6</h2>
+                            <p class="content-desc">
+                                帅府红莲曾入幕
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20197.jpg" />
+                            <h2 class="content-title">2019.7</h2>
+                            <p class="content-desc">
+                                气豪长吐雨余吐
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <!--  -->
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20198.jpg" />
+                            <h2 class="content-title">2019.8</h2>
+                            <p class="content-desc">
+                                的历华星亦偏天
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/201910.jpg" />
+                            <h2 class="content-title">2019.10</h2>
+                            <p class="content-desc">
+                                Fly fly white head not together apart,morning morning eye in street is you
+
+
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/201912.jpg" />
+                            <h2 class="content-title">2019.12</h2>
+                            <p class="content-desc">
+                                Ge t a English joke
+                                What do you call a deer with no eyes?
+                                答案见平p6
+
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20211.jpg" />
+                            <h2 class="content-title">2021.1</h2>
+                            <p class="content-desc">
+                                相濡以沫，出自《庄子·大宗师》：“泉涸，鱼相与处于陆，相呴以湿，相濡以沫，不如相忘于江湖。”
+                                两条鱼儿在泉水干涸的池塘中互相用哈气湿润对方，用口中仅有的一点点唾沫涂抹于对方的体表，使对方苟延残喘，尽可能延长一些生命。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/202111.jpg" />
+                            <h2 class="content-title">2021.11</h2>
+                            <p class="content-desc">
+                                I just crashe my new kia(一种车)
+                                so， now， I have Nokia(诺基亚)
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20222.jpg" />
+                            <h2 class="content-title">2022.2</h2>
+                            <p class="content-desc">
+                                A bee from America，what is it？
+                                答案见P3的开头
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/2023517.jpg" />
+                            <h2 class="content-title">2023.5.17</h2>
+                            <p class="content-desc">
+                                life like summer flower 之 gorgeous，die like fall leaf 之Quiet beginning
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/2023517结婚.jpg" />
+                            <h2 class="content-title">2023.5.17</h2>
+                            <p class="content-desc">
+                                ！熬夜伤身体，锻炼能强壮身体，所以，只要你熬夜，锻炼，熬夜，锻炼，熬夜锻炼，熬夜锻炼，你就能有一个健硕的尸体。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/2024317.jpg" />
+                            <h2 class="content-title">2024.3.17</h2>
+                            <p class="content-desc">
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/202482.jpg" />
+                            <h2 class="content-title">2024.8.2</h2>
+                            <p class="content-desc">
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <img class="img" src="./img/20251.jpg" />
+                            <h2 class="content-title">2025.1</h2>
+                            <p class="content-desc">
+                                
+                            </p>
+                        </div>
+                    </div>
+                            <div class="item">
+                                
+                                <div class="content">
+                            <h2 class="content-title">......</h2>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+
+        <div class="footer">
+            <button id="linkButton" onclick="window.location='jifen.html'">|ω・）</button>
         </div>
 
-        <div class="inputBox">
-          <input
-            type="button"
-            value="login"
-            onclick="checkPassword()"
-            id="btn"
-          />
-        </div>
-        <p style="text-align: center" id="message"></p>
-      </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     </section>
-  </body>
+    
+        
+      <script>
+           (function ($) {
+                $.fn.timeline = function () {
+                    var selectors = {
+                        id: $(this),
+                        item: $(this).find(".item"),
+                        activeClass: "item--active",
+                        img: ".img"
+                    };
+                    // 将第一个时间轴项目激活，并设置时间轴背景图片为第一个项目的图片
+                    selectors.item.eq(0).addClass(selectors.activeClass);
+                    selectors.id.css(
+                        "background-image",
+                        "url(" +
+                        selectors.item
+                            .first()
+                            .find(selectors.img)
+                            .attr("src") +
+                        ")"
+                    );
+                    // 获取时间轴项目的总数
+                    var itemLength = selectors.item.length;
+                    // 当页面滚动时，触发滚动事件
+                    $(window).scroll(function () {
+                        var max, min;
+                        // 获取页面滚动的距离
+                        var pos = $(this).scrollTop();
+                        selectors.item.each(function (i) {
+                            // 获取当前时间轴项目的最小和最大高度
+                            min = $(this).offset().top;
+                            max = $(this).height() + $(this).offset().top;
+                            var that = $(this);
+                            // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
+                            // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
+                            if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                                selectors.item.removeClass(selectors.activeClass);
+                                selectors.id.css(
+                                    "background-image",
+                                    "url(" +
+                                    selectors.item
+                                        .last()
+                                        .find(selectors.img)
+                                        .attr("src") +
+                                    ")"
+                                );
+                                selectors.item.last().addClass(selectors.activeClass);
+                            }
+                            // 如果当前滚动位置在当前项目的最小和最大高度之间，
+                            // 则将当前项目设置为激活状态，并设置背景图片为当前项目的图片
+                            else if (pos <= max - 10 && pos >= min) {
+                                selectors.id.css(
+                                    "background-image",
+                                    "url(" +
+                                    $(this)
+                                        .find(selectors.img)
+                                        .attr("src") +
+                                    ")"
+                                );
+                                selectors.item.removeClass(selectors.activeClass);
+                                $(this).addClass(selectors.activeClass);
+                            }
+                        });
+                    });
+                };
+            })(jQuery)
+            /*
+            最后，我们调用 timeline 插件并传入时间轴的 ID 作为参数。
+            这将启用时间轴插件并为该时间轴绑定滚动事件。
+            */
+            $("#shell").timeline();
+        </script>
+</body>
+
 </html>
