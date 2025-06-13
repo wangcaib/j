@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>(⑉°з°)-♡</title>
+    <link rel="icon" href="../i/girl.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../i/girl.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../loader.css" />
+    <script src="../loader.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+
+      #slideshow {
+        width: 92.5vh;
+        height: 92.5vh;
+        max-height: 92.5vh;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+        border: 2px;
+        border-radius: 40px;
+      }
+
+      #slide {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.5s;
+      }
+      button {
+        background: linear-gradient(to right, #e559197f, #ff0000);
+        color: rgb(255, 255, 255);
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 90px;
+        cursor: pointer;
+        box-shadow: 3px 3px 5px rgb(255, 0, 0);
+        transition: 0.5s;
+        outline: none;
+      }
+      #previous,
+      #next,
+      #last,
+      #linkButton {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-10%);
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: px 10px;
+        font-size: 2.5vh;
+        cursor: pointer;
+        opacity: 0.35;
+        transition: 0.3s;
+        outline: none;
+      }
+
+      #linkButton {
+        top: 8%;
+        left: 0px;
+      }
+
+      #previous:hover,
+      #next:hover,
+      #last:hover,
+      #linkButton:hover {
+        opacity: 1;
+        transition: 0.3s;
+      }
+      #previous {
+        left: -5px;
+        top: 55%;
+      }
+      #next {
+        right: -5px;
+        top: 55%;
+      }
+
+      #last {
+        top: 8%;
+        right: 1px;
+      }
+
+      @media only screen and (max-width: 1100px) {
+        #slideshow {
+          width: 95vw;
+          height: 95vw;
+        }
+
+        #previous {
+          left: 1vw;
+        }
+        #next {
+          right: 1vw;
+        }
+        #linkButton {
+          top: 8%;
+          left: 1vw;
+        }
+        #last {
+          top: 8%;
+        }
+      }
+    </style>
+  </head>
+  <div class="cssload-main">
+    <div class="cssload-heart">
+      <span class="cssload-heartL"></span>
+      <span class="cssload-heartR"></span>
+      <span class="cssload-square"></span>
+    </div>
+    <div class="cssload-shadow"></div>
+  </div>
+
+  <section style="display: none">
+    <body>
+      <div id="slideshow">
+        <img id="slide" src="" alt="Slide Image" />
+        <button id="previous">fast</button> #•ू (•́<
+        <button id="next">fun</button> #•́)つ
+        <button id="last">marry</button> #▷▷
+        <button id="linkButton" onclick="window.location='xiao.html'">
+          new
+        </button>
+        #|ω・
+      </div>
+      <script>
+        var images = [];
+
+        // 使用循环将文件夹中的85张照片添加到数组中
+        for (var i = 1; i <= 57; i++) {
+          images.push(i + ".jpg"); // 假设照片命名规则为 1.png, 2.png, ...
+        }
+
+        var currentIndex = 0;
+        var slide = document.getElementById("slide");
+        var linkButton = document.getElementById("linkButton");
+
+        function showSlide(index) {
+          slide.src = images[index];
+          if (index === images.length - 1) {
+            linkButton.style.display = "block";
+          } else {
+            linkButton.style.display = "none";
+          }
+        }
+
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % images.length;
+          showSlide(currentIndex);
+        }
+
+        function previousSlide() {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          showSlide(currentIndex);
+        }
+
+        function lastSlide() {
+          currentIndex = images.length - 1;
+          showSlide(currentIndex);
+        }
+
+        showSlide(currentIndex);
+
+        document.getElementById("next").addEventListener("click", nextSlide);
+        document
+          .getElementById("previous")
+          .addEventListener("click", previousSlide);
+        document.getElementById("last").addEventListener("click", lastSlide);
+      </script>
+    </body>
+  </section>
+</html>
