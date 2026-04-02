@@ -1,7 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <title>(ಥ⌣ಥ)废版</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>(ಥ⌣ಥ)</title>
     <link rel="icon" href="../i/girl.png" type="image/x-icon" />
     <link rel="shortcut icon" href="../i/girl.png" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="../loader.css" />
@@ -10,225 +12,248 @@
       ::-webkit-scrollbar {
         display: none;
       }
+
       .thumbnail:hover {
-        filter: saturate(2); /* 增加饱和度 */
-        transition: filter 0.3s ease; /* 平滑过渡效果 */
+        filter: saturate(2);
+        transition: filter 0.3s ease;
       }
-      #nextButton {
-        position: fixed;
-        top: 1vh;
-        right: 1vw;
-        width: 40px;
+
+      button {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 154, 139, 0.35) 0%,
+          rgba(255, 107, 157, 0.28) 50%,
+          rgba(253, 160, 133, 0.22) 100%
+        );
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: rgba(255, 255, 255, 0.95);
+        width: 50px;
+        height: 50px;
+        border: 1px solid rgba(255, 154, 139, 0.4);
+        border-radius: 50%;
+        box-shadow:
+          0 4px 15px rgba(255, 107, 157, 0.25),
+          0 0 0 1px rgba(255, 154, 139, 0.15) inset;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        outline: none;
+        position: absolute;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+        opacity: 0.7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-      #autoPlayButton {
-        position: fixed;
-        top: 8vh;
-        right: 1vw;
-        width: 40px;
+
+      button:hover {
+        opacity: 1;
+        transform: translateY(-3px) scale(1.05);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 154, 139, 0.5) 0%,
+          rgba(255, 107, 157, 0.42) 50%,
+          #fda08561 100%
+        );
+        border-color: rgba(255, 107, 157, 0.6);
+        box-shadow:
+          0 8px 25px rgba(255, 107, 157, 0.4),
+          0 0 0 1px rgba(255, 154, 139, 0.25) inset,
+          0 0 20px rgba(255, 107, 157, 0.3);
       }
 
       #showAllButton {
-        position: fixed;
-        top: 15vh;
-        right: 1vw;
-        width: 40px;
+        top: 6vh;
+        right: 4vw;
       }
-      .thumbnailContainer {
+
+      #autoPlayButton {
+        top: 6vh;
+        right: 9vw;
+      }
+
+      #nextButton {
+        top: 6vh;
+        right: 14vw;
+      }
+
+      #thumbnailContainer {
         display: flex;
-        justify-content: center; /* 横向居中 */
-        align-items: center; /* 纵向居中 */
+        justify-content: center;
+        align-items: flex-start;
         flex-wrap: wrap;
+        align-content: flex-start;
       }
 
       #thumbnailContainer img {
-        width: 6.2vw;
-        margin: 5px;
+        width: 6.5vw;
+        margin: 0.85vw;
         border-radius: 10px;
         cursor: pointer;
-        transition: all 0.0000001s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
 
       #thumbnailContainer img:hover {
         transform: translateY(-5px);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        box-shadow:
+          0 8px 25px rgba(255, 107, 107, 0.5),
+          0 0 0 1px rgba(255, 107, 156, 0.2) inset,
+          0 0 20px rgba(255, 107, 107, 0.15);
       }
-      button {
-        background: linear-gradient(to right, #fa4f007f, #ff0000);
-        color: rgb(255, 255, 255);
-        padding: 10px 10px;
-        margin: 0 10px;
-        border: none;
-        border-radius: 50px;
-        box-shadow: 3px 3px 5px rgb(255, 0, 0);
-        transition: 0.5s;
-        outline: none;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-0%);
-        background-color: #4caf50;
-        font-size: 16px;
-        cursor: pointer;
-        opacity: 0.5;
-        transition: 0.5s;
-      }
-      #nextButton:hover,
-      #showAllButton:hover,
-      #autoPlayButton:hover {
-        opacity: 1;
-        transition: 0.5s;
-      }
+
       .h {
-        font-size: 50px;
+        position: relative;
+        width: 100%;
+        margin-top: 4vh;
+        margin-bottom: 4vh;
         text-align: center;
-        font-weight: bold;
-        color: rgb(30, 255, 0);
-        text-transform: uppercase;
-        text-shadow: 2px 2px 4px rgba(183, 8, 5, 0.212);
-        background: linear-gradient(to right, rgb(255, 166, 0), #ff0000);
+        font-size: 4em;
+        font-weight: 700;
+        font-family: "Dancing Script", cursive;
+        background: linear-gradient(
+          135deg,
+          #ff9a8b 0%,
+          #ff6b9d 35%,
+          #fda085 65%,
+          #fcb69f 100%
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        opacity: 0.8;
+        background-clip: text;
+        letter-spacing: 1.5vw;
       }
 
       @media only screen and (max-width: 1100px) {
-        #thumbnailContainer img {
-          width: 12vw;
-        }
         button {
-          font-size: 3vw;
+          font-size: 2vw;
         }
+
         #nextButton {
           position: fixed;
-          top: 2vw;
+          top: 2.5vh;
           right: 1vw;
-          width: 6vw;
         }
+
         #autoPlayButton {
           position: fixed;
-          top: 13vw;
+          top: 9.5vh;
           right: 1vw;
-          width: 6vw;
         }
+
         #showAllButton {
           position: fixed;
-          top: 24vw;
+          top: 16.5vh;
           right: 1vw;
-          width: 6vw;
+        }
+
+        #thumbnailContainer img {
+          width: 14.5vw;
+        }
+
+        .h {
+          letter-spacing: 1vw;
+          font-size: 2.5em;
+          margin-top: 2.5vh;
+          margin-bottom: 2vh;
         }
       }
     </style>
   </head>
-  <div class="cssload-main">
-    <div class="cssload-heart">
-      <span class="cssload-heartL"></span>
-      <span class="cssload-heartR"></span>
-      <span class="cssload-square"></span>
+  <body>
+    <!-- 加载动画 -->
+    <div class="cssload-main" id="loader">
+      <div class="cssload-heart">
+        <span class="cssload-heartL"></span>
+        <span class="cssload-heartR"></span>
+        <span class="cssload-square"></span>
+      </div>
+      <div class="cssload-shadow"></div>
     </div>
-    <div class="cssload-shadow"></div>
-  </div>
 
-  <section style="display: none">
-    <body>
+    <!-- 主内容 -->
+    <section id="mainSection" style="display: none">
       <p class="h">
-        <a h>老</a
-        ><a style="text-decoration: none" href="bubble.html">姐</a>出嫁诗
+        <a>老</a
+        ><a style="text-decoration: none" href="../img/bubble.html">姐</a>出嫁诗
       </p>
       <div id="thumbnailContainer"></div>
       <button id="nextButton">▷</button>
       <button id="showAllButton">◯</button>
       <button id="autoPlayButton">▶</button>
+    </section>
 
-      <style>
-        .thumbnail:hover {
-          filter: saturate(2); /* 增加饱和度 */
-          transition: filter 0.3s ease; /* 平滑过渡效果 */
+    <script>
+      window.onload = function () {
+        var images = [];
+
+        // 使用循环将文件夹中的57张照片添加到数组中
+        for (var i = 1; i <= 57; i++) {
+          images.push(i + ".jpg");
         }
-      </style>
-      </head>
-      <body>
-       
-      <script>
-              window.onload = function () {
-                var images = [];
-      
-                // 使用循环将文件夹中的85张照片添加到数组中
-                for (var i = 1; i <= 84; i++) {
-                  images.push(i + ".jpg"); // 假设照片命名规则为 image1.png, image2.png, ...
-                }
-      
-                var currentImageIndex = 1; // 当前图片索引
-                var imageInterval; // 用于存储自动播放计时器
-      
-                var nextButton = document.getElementById("nextButton"); // 获取下一张按钮元素
-                var thumbnailContainer =
-                  document.getElementById("thumbnailContainer"); // 获取缩略图容器元素
-                var showAllButton = document.getElementById("showAllButton"); // 获取显示所有照片的按钮元素
-                var autoPlayButton = document.getElementById("autoPlayButton"); // 获取自动播放按钮元素
-      
-                // 创建第一张缩略图
-                const firstThumbnail = document.createElement("img");
-                firstThumbnail.src = images[currentImageIndex - 1]; // 将第一张照片的URL替换成实际的URL
-                firstThumbnail.className = "thumbnail"; // 添加类名以便应用CSS样式
-                // 将第一张缩略图添加到缩略图容器中
-                thumbnailContainer.appendChild(firstThumbnail);
-      
-                // 下一张按钮点击事件处理程序
-                nextButton.addEventListener("click", function () {
-                  showNextImage();
-                });
-      
-                // 自动播放按钮点击事件处理程序
-                autoPlayButton.addEventListener("click", function () {
-                  if (imageInterval) {
-                    // 取消自动播放
-                    clearInterval(imageInterval);
-                    imageInterval = null;
-                    autoPlayButton.innerHTML = "▶";
-                  } else {
-                    // 启动自动播放
-                    imageInterval = setInterval(showNextImage, 400); // 每秒自动切换图片
-                    autoPlayButton.innerHTML = "❚❚";
-                  }
-                });
-      
-                // 显示下一张图片
-                function showNextImage() {
-                  if (currentImageIndex < images.length) {
-                    // 创建并添加缩略图到缩略图容器
-                    var thumbnailImg = document.createElement("img");
-                    thumbnailImg.src = images[currentImageIndex];
-                    thumbnailImg.className = "thumbnail"; // 添加类名以便应用CSS样式
-                    thumbnailContainer.appendChild(thumbnailImg);
-      
-                    currentImageIndex++; // 递增图片索引
-                  } else {
-                    // 已经显示完所有图片，重置索引并清空缩略图容器
-                    currentImageIndex = 1;
-                    thumbnailContainer.innerHTML = "";
-      
-                    // 创建第一张缩略图
-                    const firstThumbnail = document.createElement("img");
-                    firstThumbnail.src = images[currentImageIndex - 1];
-                    firstThumbnail.className = "thumbnail"; // 添加类名以便应用CSS样式
-                    thumbnailContainer.appendChild(firstThumbnail);
-                  }
-                }
-      
-                // 显示所有照片按钮点击事件处理程序
-                showAllButton.addEventListener("click", function () {
-                  thumbnailContainer.innerHTML = ""; // 清空缩略图容器
-      
-                  // 创建并添加所有照片的缩略图到缩略图容器
-                  images.forEach(function (image) {
-                    var thumbnailImg = document.createElement("img");
-                    thumbnailImg.src = image;
-                    thumbnailImg.className = "thumbnail"; // 添加类名以便应用CSS样式
-                    thumbnailContainer.appendChild(thumbnailImg);
-                    currentImageIndex = 84;
-                  });
-                });
-              };
-            </script>
-    </body>
-  </section>
+
+        var currentImageIndex = 1;
+        var imageInterval;
+
+        var nextButton = document.getElementById("nextButton");
+        var thumbnailContainer = document.getElementById("thumbnailContainer");
+        var showAllButton = document.getElementById("showAllButton");
+        var autoPlayButton = document.getElementById("autoPlayButton");
+
+        // 创建第一张缩略图
+        var firstThumbnail = document.createElement("img");
+        firstThumbnail.src = images[currentImageIndex - 1];
+        firstThumbnail.className = "thumbnail";
+        thumbnailContainer.appendChild(firstThumbnail);
+
+        // 下一张按钮点击事件
+        nextButton.addEventListener("click", function () {
+          showNextImage();
+        });
+
+        // 自动播放按钮点击事件
+        autoPlayButton.addEventListener("click", function () {
+          if (imageInterval) {
+            clearInterval(imageInterval);
+            imageInterval = null;
+            autoPlayButton.innerHTML = "▶";
+          } else {
+            imageInterval = setInterval(showNextImage, 400);
+            autoPlayButton.innerHTML = "❚❚";
+          }
+        });
+
+        // 显示下一张图片
+        function showNextImage() {
+          if (currentImageIndex < images.length) {
+            var thumbnailImg = document.createElement("img");
+            thumbnailImg.src = images[currentImageIndex];
+            thumbnailImg.className = "thumbnail";
+            thumbnailContainer.appendChild(thumbnailImg);
+            currentImageIndex++;
+          } else {
+            currentImageIndex = 1;
+            thumbnailContainer.innerHTML = "";
+            var firstThumbnail = document.createElement("img");
+            firstThumbnail.src = images[currentImageIndex - 1];
+            firstThumbnail.className = "thumbnail";
+            thumbnailContainer.appendChild(firstThumbnail);
+          }
+        }
+
+        // 显示所有照片按钮点击事件
+        showAllButton.addEventListener("click", function () {
+          thumbnailContainer.innerHTML = "";
+          images.forEach(function (image) {
+            var thumbnailImg = document.createElement("img");
+            thumbnailImg.src = image;
+            thumbnailImg.className = "thumbnail";
+            thumbnailContainer.appendChild(thumbnailImg);
+          });
+          currentImageIndex = 57;
+        });
+      };
+    </script>
+  </body>
 </html>

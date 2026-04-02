@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,6 +20,12 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
+        background: linear-gradient(
+          135deg,
+          #fffefef3 0%,
+          #fff5f5e0 50%,
+          #fffbf8c3 100%
+        );
       }
 
       .shell {
@@ -36,7 +42,7 @@
         margin: 0 20px;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
         border-radius: 50px;
-        border: 10px solid rgb(255, 255, 255);
+        border: 2px solid rgb(255, 255, 255);
         background-color: #fff;
         position: relative;
       }
@@ -58,40 +64,71 @@
 
       .box:hover {
         flex-basis: 40%;
+        border-color: rgba(253, 160, 133, 0.5);
+        box-shadow:
+          0 8px 25px rgba(255, 107, 157, 0.2),
+          0 0 0 1px rgba(255, 154, 139, 0.21) inset,
+          0 0 20px rgba(255, 107, 124, 0.418);
       }
 
       .box:hover > img {
         width: 100%;
         height: 100%;
-        filter: saturate(2); /* 鼠标悬停时增加饱和度 */
+        filter: saturate(2);
+        /* 鼠标悬停时增加饱和度 */
       }
 
       .box:hover .button-container {
         visibility: visible;
       }
-      button {
-        background: linear-gradient(to right, #fa4f007f, #ff0000);
-        color: rgb(255, 255, 255);
-        padding: 10px 10px;
-        margin: 0 10px;
-        border: none;
-        border-radius: 50px;
-        box-shadow: 3px 3px 5px rgb(255, 0, 0);
-        transition: 0.5s;
-        outline: none;
 
+      button {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 154, 139, 0.35) 0%,
+          rgba(255, 107, 157, 0.28) 50%,
+          rgba(253, 160, 133, 0.22) 100%
+        );
+        backdrop-filter: blur(10px);
+        color: rgba(255, 255, 255, 0.95);
+        padding: 10px 10px;
+        margin: 3px 10px;
+        border: 1px solid rgba(255, 154, 139, 0.4);
+        border-radius: 40px;
+        box-shadow:
+          0 4px 15px rgba(255, 107, 157, 0.25),
+          0 0 0 1px rgba(255, 154, 139, 0.15) inset;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        outline: none;
         top: 50%;
         transform: translateY(-0%);
-        background-color: #4caf50;
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
         cursor: pointer;
-        opacity: 0.5;
-        transition: 0.5s;
+        transition: 0s;
       }
+
       .button:hover {
         opacity: 1;
-        transition: 0.5s;
+        transform: translateY(-px) scale(1.02);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 154, 139, 0.5) 0%,
+          rgba(255, 107, 157, 0.42) 50%,
+          rgba(253, 160, 133, 0.38) 100%
+        );
+        border-color: rgba(255, 107, 157, 0.6);
+        box-shadow:
+          0 8px 25px rgba(255, 107, 157, 0.4),
+          0 0 0 1px rgba(255, 154, 139, 0.25) inset,
+          0 0 20px rgba(255, 107, 157, 0.3);
       }
+
+      Button:active {
+        transform: translateY(-1px) scale(1.02);
+      }
+
       @media only screen and (max-width: 767px) {
         .shell {
           flex-direction: column;
@@ -136,7 +173,7 @@
         <div class="box">
           <img src="./img (7).jpg" />
           <div class="button-container">
-            <button class="button" onclick="window.location='../new/da.html'">
+            <button class="button" onclick="window.location = '../img/da.html'">
               |ω・）
             </button>
           </div>

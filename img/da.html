@@ -1,152 +1,283 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>(⑉°з°)-♡废版</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>(⑉°з°)-♡</title>
     <link rel="icon" href="../i/girl.png" type="image/x-icon" />
     <link rel="shortcut icon" href="../i/girl.png" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="../loader.css" />
     <script src="../loader.js"></script>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
       body {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        font-family: Arial, sans-serif;
-        margin: 0;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #fffefef3 0%,
+          #fff5f5e0 50%,
+          #fffbf8c3 100%
+        );
       }
 
       #slideshow {
-        width: 92.5vh;
-        height: 92.5vh;
-        max-height: 92.5vh;
-        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        width: 85vh;
+        height: 85vh;
+        max-width: 95vw;
+        max-height: 95vh;
         position: relative;
         overflow: hidden;
-        border: 2px;
-        border-radius: 40px;
+        border-radius: 30px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      #slideshow::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 30px;
+        padding: 2px;
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: 10;
+        pointer-events: none;
       }
 
       #slide {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: opacity 0.5s;
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
       }
-      button {
-        background: linear-gradient(to right, #e559197f, #ff0000);
-        color: rgb(255, 255, 255);
-        padding: 10px 20px;
-        font-size: 16px;
-        margin: 0 10px;
-        border: none;
-        border-radius: 90px;
-        cursor: pointer;
-        box-shadow: 3px 3px 5px rgb(255, 0, 0);
-        transition: 0.5s;
-        outline: none;
-      }
-      #previous,
-      #next,
-      #last,
-      #linkButton {
+
+      .nav-btn {
         position: absolute;
-        top: 50%;
-        transform: translateY(-10%);
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        padding: px 10px;
-        font-size: 2.5vh;
-        cursor: pointer;
-        opacity: 0.35;
-        transition: 0.3s;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 154, 139, 0.35) 0%,
+          rgba(255, 107, 157, 0.28) 50%,
+          rgba(253, 160, 133, 0.22) 100%
+        );
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: rgba(255, 255, 255, 0.9);
+        padding: 12px 18px;
+        border: 1px solid rgba(255, 154, 139, 0.4);
+        border-radius: 25px;
+        box-shadow: 0 4px 15px rgba(255, 107, 157, 0.25);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         outline: none;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        opacity: 0.3;
+        z-index: 20;
       }
 
-      #linkButton {
-        top: 8%;
-        left: 0px;
+      .nav-btn:hover {
+        opacity: 0.8;
+        transform: translateY(-3px) scale(1.05);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 154, 139, 0.5) 0%,
+          rgba(255, 107, 157, 0.42) 50%,
+          rgba(253, 160, 133, 0.38) 100%
+        );
+        border-color: rgba(255, 107, 157, 0.6);
+        box-shadow:
+          0 8px 25px rgba(255, 107, 157, 0.4),
+          0 0 20px rgba(255, 107, 157, 0.3);
       }
 
-      #previous:hover,
-      #next:hover,
-      #last:hover,
-      #linkButton:hover {
-        opacity: 1;
-        transition: 0.3s;
+      .nav-btn:active {
+        transform: translateY(-1px) scale(1.02);
       }
+
       #previous {
-        left: -5px;
-        top: 55%;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
       }
+
       #next {
-        right: -5px;
-        top: 55%;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
       #last {
-        top: 8%;
-        right: 1px;
+        top: 15px;
+        right: 15px;
       }
 
-      @media only screen and (max-width: 1100px) {
+      #linkButton {
+        top: 15px;
+        left: 15px;
+      }
+      /* 页码指示器 */
+      #counter {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 154, 139, 0.35) 0%,
+          rgba(255, 107, 157, 0.28) 100%
+        );
+        backdrop-filter: blur(10px);
+        padding: 8px 20px;
+        border-radius: 20px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+        font-family: "Dancing Script", cursive;
+        letter-spacing: 3px;
+        z-index: 20;
+        border: 1px solid rgba(255, 154, 139, 0.3);
+        opacity: 0.2;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      #counter:hover {
+        opacity: 0.8;
+
+        background: linear-gradient(
+          135deg,
+          rgba(255, 154, 139, 0.5) 0%,
+          rgba(255, 107, 157, 0.42) 50%,
+          rgba(253, 160, 133, 0.38) 100%
+        );
+        border-color: rgba(255, 107, 157, 0.6);
+        box-shadow:
+          0 8px 25px rgba(255, 107, 157, 0.4),
+          0 0 20px rgba(255, 107, 157, 0.3);
+      }
+
+      /* 移动端适配 */
+      @media only screen and (max-width: 767px) {
         #slideshow {
           width: 95vw;
           height: 95vw;
+          max-height: 80vh;
+          border-radius: 20px;
+        }
+
+        #slideshow::before {
+          border-radius: 20px;
+        }
+
+        .nav-btn {
+          padding: 10px 14px;
+          font-size: 14px;
+          opacity: 0.3;
         }
 
         #previous {
-          left: 1vw;
+          left: 5px;
         }
+
         #next {
-          right: 1vw;
+          right: 5px;
         }
+
+        #last,
         #linkButton {
-          top: 8%;
-          left: 1vw;
+          top: 10px;
+          padding: 8px 14px;
+          font-size: 14px;
         }
+
+        #linkButton {
+          left: 10px;
+          font-size: 13px;
+        }
+
         #last {
-          top: 8%;
+          right: 10px;
+        }
+
+        #counter {
+          bottom: 10px;
+          padding: 6px 14px;
+          font-size: 12px;
         }
       }
     </style>
   </head>
-  <div class="cssload-main">
-    <div class="cssload-heart">
-      <span class="cssload-heartL"></span>
-      <span class="cssload-heartR"></span>
-      <span class="cssload-square"></span>
+  <body>
+    <div class="cssload-main">
+      <div class="cssload-heart">
+        <span class="cssload-heartL"></span>
+        <span class="cssload-heartR"></span>
+        <span class="cssload-square"></span>
+      </div>
+      <div class="cssload-shadow"></div>
     </div>
-    <div class="cssload-shadow"></div>
-  </div>
 
-  <section style="display: none">
-    <body>
+    <section style="display: none">
       <div id="slideshow">
         <img id="slide" src="" alt="Slide Image" />
-        <button id="previous">fast</button> #•ू (•́<
-        <button id="next">fun</button> #•́)つ
-        <button id="last">marry</button> #▷▷
-        <button id="linkButton" onclick="window.location='xiao.html'">
-          new
+        <button id="previous" class="nav-btn">•ू (•́<</button>
+        <button id="next" class="nav-btn">#•́)つ</button>
+        <button id="last" style="font-size: 14px" class="nav-btn">▷▷</button>
+        <button
+          id="linkButton"
+          class="nav-btn"
+          onclick="window.location = 'xiao.html'"
+        >
+          |ω・
         </button>
-        #|ω・
+        <div id="counter">1 / 57</div>
       </div>
+
       <script>
         var images = [];
-
-        // 使用循环将文件夹中的85张照片添加到数组中
-        for (var i = 1; i <= 84; i++) {
-          images.push(i + ".jpg"); // 假设照片命名规则为 1.png, 2.png, ...
+        for (var i = 1; i <= 57; i++) {
+          images.push(i + ".jpg");
         }
 
         var currentIndex = 0;
         var slide = document.getElementById("slide");
         var linkButton = document.getElementById("linkButton");
+        var counter = document.getElementById("counter");
 
         function showSlide(index) {
-          slide.src = images[index];
+          slide.style.opacity = "0";
+          slide.style.transform = "scale(1.02)";
+
+          setTimeout(function () {
+            slide.src = images[index];
+            slide.style.opacity = "1";
+            slide.style.transform = "scale(1)";
+          }, 300);
+
+          counter.textContent = index + 1 + " / " + images.length;
+
           if (index === images.length - 1) {
             linkButton.style.display = "block";
           } else {
@@ -169,6 +300,7 @@
           showSlide(currentIndex);
         }
 
+        // 初始化
         showSlide(currentIndex);
 
         document.getElementById("next").addEventListener("click", nextSlide);
@@ -176,7 +308,14 @@
           .getElementById("previous")
           .addEventListener("click", previousSlide);
         document.getElementById("last").addEventListener("click", lastSlide);
+
+        // 键盘导航
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowLeft") previousSlide();
+          if (e.key === "ArrowRight") nextSlide();
+          if (e.key === "ArrowEnd") lastSlide();
+        });
       </script>
-    </body>
-  </section>
+    </section>
+  </body>
 </html>
