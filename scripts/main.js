@@ -41,7 +41,7 @@ function checkPassword() {
   var count = parseInt(document.getElementById("count").value);
 
   // 此处为了简单起见，假设正确密码是 "password"
-  if (password !== "1") {
+  if (password !== "517620") {
     count++;
     document.getElementById("count").value = count;
 
@@ -49,36 +49,47 @@ function checkPassword() {
     if (count === 1) {
       document.getElementById("message").innerHTML =
         "<span>(ಡωಡ)密码是一个六位数</span>";
-    } else if (count === 3) {
+    } else if (count === 4) {
       document.getElementById("message").innerHTML =
         "<span>(ง •̀_•́)ง密码由两个三位数日期组成</span>";
-    } else if (count === 4) {
+    } else if (count === 6) {
       document.getElementById("message").innerHTML = "<span>wrong</span>";
-    } else if (count === 5) {
+    } else if (count === 7) {
       document.getElementById("message").innerHTML =
         "<span>٩( 'ω' )و 还记得你们领红本本的日期吗</span>";
-    } else if (count === 8) {
+    } else if (count === 9) {
+      document.getElementById("message").innerHTML =
+        "<span>wrong</span>";
+    } 
+     else if (count === 10) {
+      document.getElementById("message").innerHTML =
+        "<span>ruang</span>";
+    }  else if (count === 11) {
       document.getElementById("message").innerHTML =
         "<span>wrong again</span>";
-    } else if (count === 10) {
+    }
+    else if (count === 12) {
+            document.getElementById("message").innerHTML =
+              "<span>✺（∗❛ัᴗ❛ั∗)◞✺试过结婚的日期吗</span>";
+     }
+    else if (count === 13) {
       document.getElementById("message").innerHTML =
         "<span>| ू•ૅω•́)！！！还没进去呀</span>";
-    } else if (count === 11) {
-      document.getElementById("message").innerHTML =
-        "<span>✺（∗❛ัᴗ❛ั∗)◞✺试过今天的日期吗</span>";
-    } else if (count === 15) {
+    } 
+     else if (count === 18) {
       document.getElementById("message").innerHTML =
         "<span>ԅ(¯ㅂ¯ԅ)不是吧，还没进去呢,密码是由51开头的哦</span>";
-    } else if (count === 17) {
+    } else if (count === 21) {
       document.getElementById("message").innerHTML =
         "<span>。。。</span>";
-    } else if (count === 20) {
+    } else if (count === 24) {
       document.getElementById("message").innerHTML =
-        "<span>|ω・）密码是由78结尾的</span>";
-    } else if (count === 30) {
+        "<span>|ω・）密码是由20结尾的哦</span>";
+    }  else if (count === 36) {
       document.getElementById("message").innerHTML =
-        "<span>（｡ò ∀ ó｡）真没想到，你们竟然错了30次，密码是51_378</span>";
-    } else {
+        "<span>ԅ(¯ㅂ¯ԅ)应该不会蠢到这吧</span>";
+    }
+     else {
       document.getElementById("message").innerHTML =
         "<span>密码错误</span>";
     }
